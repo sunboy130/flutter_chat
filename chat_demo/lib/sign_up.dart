@@ -8,13 +8,21 @@ class RegisterPage extends StatefulWidget {
 }
 
 bool isChecked = false; // 初始未选中状态
+bool _obscureText = true; // 初始状态为密码隐藏
 
 initState() {
   isChecked = false;
+  _obscureText = true;
 }
 
 class _RegisterPageState extends State<RegisterPage> {
-  
+
+  void _togglePasswordVisibility() {
+    setState(() {
+      _obscureText = !_obscureText; // 切换密码可见性状态
+    });
+  }
+
   void handleCheckboxValueChanged(bool? value) {
     setState(() {
       isChecked = value!; // 更新状态
@@ -38,7 +46,7 @@ class _RegisterPageState extends State<RegisterPage> {
                 SizedBox(height: 60),
                 EmailWidget(),
                 SizedBox(height: 50),
-                PasswordWidget(),
+                PasswordWidget(_obscureText, _togglePasswordVisibility),
                 SizedBox(height: 40),
                 checkBoxWidget(context, isChecked, handleCheckboxValueChanged),
                 SizedBox(height: 42),
@@ -150,7 +158,7 @@ Widget EmailWidget(){
 
 }
 
-Widget PasswordWidget(){
+Widget PasswordWidget(bool obscure, togglePasswordVisibility){
   return Padding(
     padding: const EdgeInsets.only(left: 32,right: 32),
     child: Column(
@@ -166,18 +174,18 @@ Widget PasswordWidget(){
           ),
         ),
         TextFormField(
-          obscureText: true,
+          obscureText: _obscureText, // 根据状态控制密码是否隐藏
           decoration: InputDecoration(
             enabledBorder: UnderlineInputBorder(
               borderSide: BorderSide(color: Color(0xFF17C3CE), width: 1.0),
             ),
             suffixIcon: IconButton(
-              icon: Image.asset("assets/images/Eye_light.png"),
-              iconSize: 26, // 设置后缀图标的大小
-              onPressed: () {
-                // 处理后缀图标的点击事件
-              },
-            ),  // Replac // Replace with your desired icon
+              icon: _obscureText
+                  ? Image.asset("assets/images/Eye_light.png")
+                  : Image.asset("assets/images/eye_off.png"), // 根据状态切换图标
+              iconSize: 26,
+              onPressed: togglePasswordVisibility, // 点击后切换密码可见性
+            ),
           ),
         ),
       ],
