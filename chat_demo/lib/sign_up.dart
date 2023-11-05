@@ -79,7 +79,9 @@ Widget headerWidget() {
       child: Column(
         crossAxisAlignment: CrossAxisAlignment.start,
         children: [
-            Text(
+          Row(
+            children: [
+              Text(
                 "Welcome back",
                 style: TextStyle(
                   color: Colors.black, // 颜色为9E9E9E
@@ -87,6 +89,13 @@ Widget headerWidget() {
                   fontFamily: "Inter", // 字体为Inter
                   fontWeight: FontWeight.w600, // 字体权重为400
                 ),
+              ),
+              Image(
+                image: Image.asset("assets/images/emoji.png").image,
+                width: 22,
+                height: 22,
+              )
+            ]
           ),
           SizedBox(height: 29),
           Text(
