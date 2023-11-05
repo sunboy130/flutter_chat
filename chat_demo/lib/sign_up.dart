@@ -49,6 +49,7 @@ class _RegisterPageState extends State<RegisterPage> {
                 continueWidget(),
                 SizedBox(height: 27),
                 otherLoginWidget(),
+                SizedBox(height: 40),
               ],
             ),
         ),
@@ -316,75 +317,159 @@ Widget continueWidget(){
     );
 }
 
-Widget otherLoginWidget(){
+// Widget otherLoginWidget() {
+//   return Row(
+//     children: [
+//       SizedBox(width: 25), // 左边距离屏幕
+//       Flexible(
+//         flex: 1,
+//         child: Container(
+//           height: 55,
+//           child: OutlinedButton(
+//             onPressed: () {
+//               // 处理按钮点击事件
+//               print("Button Clicked");
+//             },
+//             style: OutlinedButton.styleFrom(
+//               side: BorderSide(
+//                 color: Colors.black, // 边框颜色
+//                 width: 0.5, // 边框宽度
+//               ),
+//               shape: RoundedRectangleBorder(
+//                 borderRadius: BorderRadius.circular(8), // 圆角半径
+//               ),
+//             ),
+//             child: Image.asset("assets/images/Google.png", width: 30, height: 30),
+//           ),
+//         ),
+//       ),
+//       SizedBox(width: 22), // 按钮之间的间距是22
+//       Flexible(
+//         flex: 1,
+//         child: Container(
+//           height: 55,
+//           child: OutlinedButton(
+//             onPressed: () {
+//               // 处理按钮点击事件
+//               print("Button Clicked");
+//             },
+//             style: OutlinedButton.styleFrom(
+//               side: BorderSide(
+//                 color: Colors.black, // 边框颜色
+//                 width: 0.5, // 边框宽度
+//               ),
+//               shape: RoundedRectangleBorder(
+//                 borderRadius: BorderRadius.circular(8), // 圆角半径
+//               ),
+//             ),
+//             child: Image.asset("assets/images/Facebook.png", width: 30, height: 30),
+//           ),
+//         ),
+//       ),
+//       SizedBox(width: 22), // 按钮之间的间距是22
+//       Flexible(
+//         flex: 1,
+//         child: Container(
+//           height: 55,
+//           child: OutlinedButton(
+//             onPressed: () {
+//               // 处理按钮点击事件
+//               print("Button Clicked");
+//             },
+//             style: OutlinedButton.styleFrom(
+//               side: BorderSide(
+//                 color: Colors.black, // 边框颜色
+//                 width: 0.5, // 边框宽度
+//               ),
+//               shape: RoundedRectangleBorder(
+//                 borderRadius: BorderRadius.circular(8), // 圆角半径
+//               ),
+//             ),
+//             child: Image.asset("assets/images/Apple.png", width: 30, height: 30),
+//           ),
+//         ),
+//       ),
+//       SizedBox(width: 25), // 右边距离屏幕
+//     ],
+//   );
+// }
+
+Widget otherLoginWidget() {
   return Row(
-    mainAxisAlignment: MainAxisAlignment.center,
     children: [
-      Container(
-        width: 110,
-        height: 55,
-        child: OutlinedButton(
-          onPressed: () {
-            // 处理按钮点击事件
-            print("Button Clicked");
-          },
-          style: OutlinedButton.styleFrom(
-            side: BorderSide(
-              color: Colors.black, // 边框颜色
-              width: 0.5, // 边框宽度
+      SizedBox(width: 25), // 左边距离屏幕
+      Expanded(
+        child: Container(
+          height: 55,
+          child: OutlinedButton(
+            onPressed: () {
+              // 处理按钮点击事件
+              print("Button Clicked");
+            },
+            style: OutlinedButton.styleFrom(
+              side: BorderSide(
+                color: Colors.black, // 边框颜色
+                width: 0.5, // 边框宽度
+              ),
+              shape: RoundedRectangleBorder(
+                borderRadius: BorderRadius.circular(8), // 圆角半径
+              ),
             ),
-            shape: RoundedRectangleBorder(
-              borderRadius: BorderRadius.circular(8), // 圆角半径
-            ),
+            child: Image.asset("assets/images/Google.png", width: 30, height: 30),
           ),
-        child: Image.asset("assets/images/Google.png", width: 30, height: 30),
-
         ),
       ),
-      SizedBox(width: 22),
-      Container(
-        width: 110,
-        height: 55,
-        child: OutlinedButton(
-          onPressed: () {
-            // 处理按钮点击事件
-            print("Button Clicked");
-          },
-          style: OutlinedButton.styleFrom(
-            side: BorderSide(
-              color: Colors.black, // 边框颜色
-              width: 0.5, // 边框宽度
+      SizedBox(width: 22), // 按钮之间的间距是22
+      Expanded(
+        child: Container(
+          height: 55,
+          child: OutlinedButton(
+            onPressed: () {
+              // 处理按钮点击事件
+              print("Button Clicked");
+            },
+            style: OutlinedButton.styleFrom(
+              side: BorderSide(
+                color: Colors.black, // 边框颜色
+                width: 0.5, // 边框宽度
+              ),
+              shape: RoundedRectangleBorder(
+                borderRadius: BorderRadius.circular(8), // 圆角半径
+              ),
             ),
-            shape: RoundedRectangleBorder(
-              borderRadius: BorderRadius.circular(8), // 圆角半径
-            ),
+            child: Image.asset("assets/images/Facebook.png", width: 30, height: 30),
           ),
-        child: Image.asset("assets/images/Facebook.png", width: 30, height: 30),
-
         ),
       ),
-      SizedBox(width: 22),
-      Container(
-        width: 110,
-        height: 55,
-        child: OutlinedButton(
-          onPressed: () {
-            // 处理按钮点击事件
-            print("Button Clicked");
-          },
-          style: OutlinedButton.styleFrom(
-            side: BorderSide(
-              color: Colors.black, // 边框颜色
-              width: 0.5, // 边框宽度
+      SizedBox(width: 22), // 按钮之间的间距是22
+      Expanded(
+        child: Container(
+          height: 55,
+          child: OutlinedButton(
+            onPressed: () {
+              // 处理按钮点击事件
+              print("Button Clicked");
+            },
+            style: OutlinedButton.styleFrom(
+              side: BorderSide(
+                color: Colors.black, // 边框颜色
+                width: 0.5, // 边框宽度
+              ),
+              shape: RoundedRectangleBorder(
+                borderRadius: BorderRadius.circular(8), // 圆角半径
+              ),
             ),
-            shape: RoundedRectangleBorder(
-              borderRadius: BorderRadius.circular(8), // 圆角半径
-            ),
+            child: Image.asset("assets/images/Apple.png", width: 30, height: 30),
           ),
-        child: Image.asset("assets/images/Apple.png", width: 30, height: 30),
-
         ),
       ),
+      SizedBox(width: 25), // 右边距离屏幕
     ],
   );
 }
+
+
+
+
+
+
