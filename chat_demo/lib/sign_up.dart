@@ -1,7 +1,6 @@
-import 'dart:ffi';
-
 import 'package:flutter/cupertino.dart';
 import 'package:flutter/material.dart';
+import 'package:flutter_easyloading/flutter_easyloading.dart';
 
 class RegisterPage extends StatefulWidget {
   @override
@@ -23,6 +22,7 @@ class _RegisterPageState extends State<RegisterPage> {
     });
   }
 
+  
    @override
   Widget build(BuildContext context) {
 
@@ -206,7 +206,25 @@ Widget SignInBtnWidget(){
         child: ElevatedButton(
           onPressed: () {
             // 处理按钮点击事件
-            print("Sign In Clicked");
+            EasyLoading.instance
+              ..displayDuration = const Duration(milliseconds: 2000)  // 加载时间
+              ..indicatorType = EasyLoadingIndicatorType.circle  // 加载类型
+              ..loadingStyle = EasyLoadingStyle.custom  // 加载样式
+              ..indicatorSize = 45.0   // 大小
+              ..indicatorColor = Color(0xFF17C3CE)
+              ..progressColor = Color(0xFF17C3CE)
+              ..backgroundColor = Colors.white
+              ..textColor = Color(0xFF17C3CE)
+              ..maskType = EasyLoadingMaskType.black // 遮罩
+              ..userInteractions = true  // 使用单例模式
+              ..dismissOnTap = false;  // 指示器结束的点击时间
+            // 显示指示器
+            EasyLoading.show();
+            //  延时2秒
+            Future.delayed(const Duration(seconds: 2), () {
+              //  关闭指示器
+              EasyLoading.dismiss();
+            });
           },
           style: ElevatedButton.styleFrom(
             primary: Colors.lightBlue, // 按钮的背景颜色
